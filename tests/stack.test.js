@@ -23,5 +23,5 @@ test('peek on stack with all elements removed returns undefined', () => {
     stack.pop();
     stack.pop();
     stack.pop();
-    expect(stack.peek()).toBeDefined();
+    expect(stack.peek()).toBeUndefined();
 });

@@ -44,7 +44,7 @@ describe('Clicking "Poppa stacken!"', () =>{
         await popButton.click();
         let popAlert = await driver.switchTo().alert();
         let message = await popAlert.getText();
-        expect(message).toEqual("Tog bort");
+        expect(message).toEqual("Tog bort Pop");
         popAlert.accept();
     });
 });
