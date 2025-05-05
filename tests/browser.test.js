@@ -32,3 +32,19 @@ describe('Clicking "Pusha till stacken"', () => {
         await alert.accept();
     });
 });
+
+describe('Clicking "Poppa stacken!"', () =>{
+    it('should open an alert box', async () => {
+        let pushButton = await driver.findElement(By.id('push'));
+        await pushButton.click();
+        let pushAlert = await driver.switchTo().alert();
+        await pushAlert.sendKeys("Pop");
+        await pushAlert.accept();
+        let popButton = await driver.findElement(By.id('pop'));
+        await popButton.click();
+        let popAlert = await driver.switchTo().alert();
+        let message = await popAlert.getText();
+        expect(message).toEqual("Tog bort");
+        popAlert.accept();
+    });
+});
